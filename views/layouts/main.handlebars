@@ -26,12 +26,21 @@
       <nav>
         <a href="/signup">signup</a>
       </nav>
+      <nav>
+        {{#if loggedIn}}
+        <button id="loguot" class="btn-no-style">Logout</button>
+        {{else}}
+        <a href="/login"></a>
+        {{/if}}
+      </nav>
     </main>
     <footer>
       Thanks for visiting!
     </footer>
   </div>
+  {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
