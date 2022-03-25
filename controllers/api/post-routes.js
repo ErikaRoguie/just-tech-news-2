@@ -35,6 +35,29 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/login', (req,res)=>{
+  if(req.session.login){
+    res.redirect('/');
+    return;
+  }
+  res.render('login');
+});
+
+app.get('/', 
+(req, res, next) => {
+  console.log('first middleware');
+  next();
+},
+(req, res, next) => {
+  console.log('second middleware');
+  next();
+}, 
+(req, res) => {
+  console.log('final function call');
+  res.send('ok');
+}
+);
+
 router.get('/:id', (req, res) => {
   Post.findOne({
     where: {
@@ -126,7 +149,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
   console.log('id', req.params.id);
   Post.destroy({
     where: {
