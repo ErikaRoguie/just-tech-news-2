@@ -47,8 +47,8 @@ Your application’s folder structure must follow the Model-View-Controller para
 You’ll also need the dotenv package (Links to an external site.) to use environment variables, the bcrypt package (Links to an external site.) to hash passwords, and the express-session (Links to an external site.) and connect-session-sequelize (Links to an external site.) packages to add authentication.
 # Links
 github.com/ErikaRoguie/just-tech-news-2
-
-
+https://erikaroguie.github.io/just-tech-news-2/
+https://roguie-just-tech-news.herokuapp.com/
 
 # NOTE
 The express-session (Links to an external site.) package stores the session data on the client in a cookie. When you are idle on the site for more than a set time, the cookie will expire and you will be required to log in again to start a new session. This is the default behavior and you do not have to do anything to your application other than implement the npm package.
